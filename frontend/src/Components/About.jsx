@@ -3,15 +3,15 @@ import { ABOUT_TEXT } from "../constants";
 
 const About = () => {
   return (
-    <div className='border-b border-neutral-900 pb-4'>
-      <h2 className='my-20 text-center text-4xl'>
+    <div id="about" className='border-b border-neutral-900 mt-15 py-12'>
+      <h2 className='mt-20 text-center text-4xl text-balance font-semibold lg:text-5xl'>
       About
-      <span className="text-neutral-500"> Me</span>
+      <span className="text-slate-200 font-semibold"> Me</span>
       </h2>
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap align-center justify-center">
         <div className="w-full lg:w-1/2 lg:p-8">
             <div className="flex items-center justify-center">
-                <img className="rounded-2xl" src={aboutImg} alt="about"/>
+                <img className="w-60 rounded-2xl" src={aboutImg} alt="about"/>
             </div>
         </div>
         <div className="w-full lg:w-1/2">

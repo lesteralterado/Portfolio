@@ -3,7 +3,7 @@ import project2 from "../assets/projects/water_works_sys.png";
 import project3 from "../assets/projects/chat_app.png";
 import project4 from "../assets/logoo.png";
 
-export const HERO_CONTENT = `My name is Lester, and I am currently a 4th-year student pursuing a degree in Bachelor of Science in Information Technology (BSIT) at CTU-Barili. I am deeply passionate about software development, particularly in web development. Throughout my academic journey, I have developed skills in coding, project management, and app development.`;
+export const HERO_CONTENT = `Hi! I'm a Front-end Developer with experience in building responsive web and mobile apps using React, Next.js, TypeScript, and React Native. I focus on creating user-friendly systems that improve workflows, attract more customers, and solve real-world problems—especially for rental businesses.`;
 
 export const ABOUT_TEXT = `I am a dedicated and passion for creating efficient and user-friendly web applications. Familiar with modern front-end web development frameworks and tools, including HTML5, CSS3, JavaScript, and React.js, for creating responsive and user-friendly interfaces. Understanding of IoT technologies and protocols, with hands-on experience integrating sensors (e.g., DHT11, NPK sensors) and microcontrollers like NodeMCU and Arduino. - Strong problem-solving and debugging skills in web and mobile application development. - Effective at designing and implementing interactive front-end solutions that improve user engagement and experience.`;
 
@@ -43,7 +43,7 @@ export const PROJECTS = [
     title: "Smart Plant Care",
     image: project1,
     description:
-      "The Smart Plant Care System is an IoT-based mobile app development project designed to automate and optimize plant maintenance. It uses a soil moisture sensor (Arduino Uno) and a water level sensor (NodeMCU) to monitor hydration, while a DHT11 sensor tracks temperature and humidity. An NPK sensor measures essential soil nutrients (Nitrogen, Phosphorous, Potassium) to support healthy growth.",
+      "The Smart Plant Care System is an IoT-based mobile app development project designed to automate and optimize plant maintenance.",
     technologies: ["Kotlin", "C", "C++", "Firebase"],
   },
   {
