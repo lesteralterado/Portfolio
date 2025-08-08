@@ -7,6 +7,7 @@ import Navbar from './Components/Navbar';
 import Projects from './Components/Projects';
 import Technologies from './Components/Technologies';
 import Footer from './Components/Footer';
+import { ThemeProvider } from "./Components/ui/theme-provider"
 
 const App = () => {
   return (
@@ -14,17 +15,19 @@ const App = () => {
       <div className='fixed top-0 -z-10 h-full w-full'>
         <div className="absolute inset-0 -z-10 h-full w-full items-center px-5 py-24 bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
       </div>
+      <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
         <Navbar />
-      <div className='container mx-auto px-8'>
-        <Hero />
-        <About />
-        <Features />
-        <Technologies />
-        {/* <Experience /> */}
-        <Projects />
-        <Contact />
-      </div>
+          <div className='container mx-auto px-8'>
+            <Hero />
+            <About />
+            <Features />
+            <Technologies />
+            {/* <Experience /> */}
+            <Projects />
+            <Contact />
+          </div>
         <Footer />
+      </ThemeProvider>
     </div>
   );
 };

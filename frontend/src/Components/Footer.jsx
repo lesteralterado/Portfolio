@@ -5,7 +5,7 @@ import Logo from "../assets/projects/logo.png";
 const links = [
   {
     title: "Home",
-    href: "#",
+    href: "#home",
   },
   {
     title: "Solutions",
@@ -13,11 +13,11 @@ const links = [
   },
   {
     title: "Customers",
-    href: "#",
+    href: "#projects",
   },
   {
     title: "Pricing",
-    href: "#",
+    href: "#pricing",
   },
   {
     title: "Help",
@@ -111,7 +111,7 @@ const Footer = () => (
             </svg>
           </a>
           <a
-            href="#"
+            href="https://www.facebook.com/lester.alterado.royales"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Facebook"
@@ -156,7 +156,7 @@ const Footer = () => (
             </svg>
           </a>
           <a
-            href="#"
+            href="https://www.instagram.com/lester_royals"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"

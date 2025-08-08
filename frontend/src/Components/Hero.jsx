@@ -4,7 +4,7 @@ import { delay, motion } from "framer-motion";
 import "../index.css"; // Import the CSS for animation
 import { HoverBorderGradient } from "../Components/ui/hover-border-gradient";
 
-const highlight = "font-semibold text-slate-400";
+const highlight = "bg-gradient-to-r from-slate-500 via-slate-200 to-slate-600 bg-clip-text text-transparent";
 
 const container = (delay) => ({
     hidden: {X: -100, opacity: 0},
@@ -17,7 +17,7 @@ const container = (delay) => ({
 
 const Hero = () => {
 return (
-    <div id="hero" className="border-b border-neutral-900 pt-29 lg:mb-35 mt-15">
+    <div id="home" className="border-b border-neutral-900 pt-29 lg:mb-35 mt-15">
             <div className="flex flex-wrap mt-20">
                     <div className="w-full lg:w-1/2">
                             <div className="flex flex-col pt-29 items-center lg:items-start">
@@ -53,7 +53,7 @@ return (
                                                 {" "}especially for rental businesses.
                                     </motion.p>
                                     <motion.a
-                                            href="#contact"
+                                            href="#contactme"
                                             whileTap={{ scale: 0.96 }}
                                             whileHover={{ scale: 1.04, boxShadow: "0 4px 20px rgba(200, 200, 200, 0.1)" }}
                                             className="inline-block rounded text-white font-semibold transition-all duration-150
@@ -63,21 +63,22 @@ return (
                                             aria-pressed="false"
                                     >
                                         <HoverBorderGradient
-                                                containerClassName="rounded"
+                                                containerClassName="rounded -z-10"
                                                 as="button"
-                                                className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2"
+                                                className="bg-black text-white flex items-center space-x-2"
                                         >
                                                 <span>Get in Touch</span>
                                         </HoverBorderGradient>
                                     </motion.a>
                             </div>
                     </div>
-                    <div className="w-full lg:w-1/2 lg:p-8">
-                            <div className="flex justify-center -mt-25" 
+                    <div className="w-full lg:w-1/2 p-4 lg:p-8">
+                            <div className="flex justify-center items-center mx-auto" 
                                  style={{
-                                        width: "520px",
-                                        height: "auto",
-                                        margin: "20px auto",
+                                        maxWidth: "100%",
+                                        width: "100%",
+                                        maxWidth: "520px",
+                                        aspectRatio: "1 / 1",
                                         borderRadius: "29% 71% 76% 24% / 73% 59% 41% 27%", 
                                         background: "linear-gradient(135deg, #E3E3E3 0%, #000000 100%)" 
                                         }}>
@@ -85,8 +86,10 @@ return (
                                             initial={{x: 100, opacity: 0}}
                                             animate={{x: 0, opacity: 1}}
                                             transition={{duration: 1, delay: 1.2}}
-                                            src={profilePic} alt="Lester Royals" 
-                                            
+                                            src={profilePic} 
+                                            alt="Lester Royals" 
+                                            className="w-full h-auto object-contain rounded-[29%_71%_76%_24%_/_73%_59%_41%_27%]"
+
                                     />
                             </div>
                     </div>

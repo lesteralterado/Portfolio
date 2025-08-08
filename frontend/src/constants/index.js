@@ -1,4 +1,4 @@
-import project1 from "../assets/plant_care_dash.jpg";
+import project1 from "../assets/projects/smart_plant_care.png";
 import project2 from "../assets/projects/water_works_sys.png";
 import project3 from "../assets/projects/chat_app.png";
 import project4 from "../assets/logoo.png";

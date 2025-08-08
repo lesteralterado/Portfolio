@@ -1,7 +1,8 @@
 import { CONTACT } from "../constants";
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { div } from "motion/react-client";
+import { usePackage } from '../assets/context/PackageContext';
 
 const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -10,6 +11,15 @@ const Contact = () => {
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
+  // const [selectedPackage, setSelectedPackage] = useState('');
+  const { selectedPackage, setSelectedPackage } = usePackage();
+
+  useEffect(() => {
+    const storedPackage = localStorage.getItem('selectedPackage');
+    if (storedPackage) {
+      setSelectedPackage(storedPackage);
+    }
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -27,9 +37,12 @@ const Contact = () => {
       if (res.ok) {
         setStatus("Message sent successfully!");
         setTimeout(() => setStatus(""), 5000);
-        setForm({ name: "", email: "", message: "" });
+        setForm({ name: "", email: "", message: "", budget: "" });
+        setSelectedPackage("selection");
       } else {
         setStatus(data.error || "Failed to send message.");
+        setTimeout(() => setStatus(""), 5000);
+        setSelectedPackage("selection");
       }
     } catch (err) {
       setStatus("Failed to send message.");
@@ -38,11 +51,11 @@ const Contact = () => {
   };
 
   return (
-    <div id="contact" className="mt-15 py-12">
+    <div id="contactme" className="mt-15 py-12">
       <h2 className="my-20 text-center text-balance text-4xl font-semibold lg:text-5xl">Get in Touch</h2>
-      <div className="flex flex-col md:flex-row md:justify-center md:items-start gap-10">
+      <div className="flex flex-wrap align-center justify-center md:justify-center md:items-start gap-10">
         {/* Left Side: Description & Info */}
-        <div className="md:w-1/2 flex flex-col items-start space-y-6 text-lg tracking-tight px-4">
+        <div className="w-full flex items-start justify-center md:w-1/2 flex-col space-y-6 text-lg tracking-tight px-4">
           <p className="mb-4">
             Feel free to reach out for collaborations, project inquiries, or just to say hello!
           </p>
@@ -64,7 +77,118 @@ const Contact = () => {
           </div>
         </div>
         {/* Right Side: Form */}
-        <div className="md:w-1/2 w-full px-4">
+        {/* <form onSubmit={handleSubmit} className="flex flex-col space-y-4 text-black dark:text-white bg-white dark:bg-black p-6 rounded shadow"> */}
+        <div className="w-full flex items-center justify-center px-9 py-8">
+          <form onSubmit={handleSubmit} className="w-full max-w-2xl">
+            <div className="flex flex-col w-full">
+              <div className="flex flex-center gap-4">
+              {/* Your Name */}
+              <div className="flex flex-grow items-end gap-4 py-3">
+                <label className="flex flex-col w-full">
+                  <p className="text-white text-base font-medium pb-2">Your Name</p>
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Enter your name"
+                    className="form-input w-full rounded-xl text-white bg-[#233648] h-14 p-4 placeholder:text-[#92adc9]"
+                    value={form.name}
+                    onChange={handleChange}
+                    required
+                  />
+                </label>
+              </div>
+
+              {/* Email */}
+              <div className="flex flex-grow items-end gap-4 py-3">
+                <label className="flex flex-col w-full">
+                  <p className="text-white text-base font-medium pb-2">Email</p>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    className="form-input w-full rounded-xl text-white bg-[#233648] h-14 p-4 placeholder:text-[#92adc9]"
+                    value={form.email}
+                    onChange={handleChange}
+                    required
+                  />
+                </label>
+              </div>
+              </div>
+
+              {/* Package */}
+              <div className="flex flex-wrap items-end gap-4 py-3">
+                <label className="flex flex-col w-full">
+                  <p className="text-white text-base font-medium pb-2">Package</p>
+                  <select
+                    className="form-input w-full rounded-xl text-white bg-[#233648] h-14 p-4 placeholder:text-[#92adc9]"
+                    value={selectedPackage}
+                    onChange={(e) => setSelectedPackage(e.target.value)}
+                  >
+                    <option value="selection">Select a package</option>
+                    <option value="basic">Basic</option>
+                    <option value="standard">Standard</option>
+                    <option value="premium">Premium</option>
+                    <option value="custom">Custom</option>
+                  </select>
+                </label>
+              </div>
+
+              {/* Project Description */}
+              <div className="flex flex-wrap items-end gap-4 py-3">
+                <label className="flex flex-col w-full">
+                  <p className="text-white text-base font-medium pb-2">Project Description</p>
+                  <textarea
+                    name="message"
+                    value={form.message}
+                    onChange={handleChange}
+                    required
+                    rows={5}
+                    placeholder="Describe your project requirements"
+                    className="form-input w-full rounded-xl text-white bg-[#233648] min-h-36 p-4 placeholder:text-[#92adc9]"
+                  ></textarea>
+                </label>
+              </div>
+
+              {/* Custom Budget */}
+              {selectedPackage === 'custom' && (
+                <div className="flex flex-wrap items-end gap-4 py-3">
+                  <label className="flex flex-col w-full">
+                    <p className="text-white text-base font-medium pb-2">Budget</p>
+                    <input
+                      name="budget"
+                      value={form.budget}
+                      onChange={handleChange}
+                      type="text"
+                      placeholder="e.g., $5,000 - $10,000"
+                      className="form-input w-full rounded-xl text-white bg-[#233648] h-14 p-4 placeholder:text-[#92adc9]"
+                    />
+                  </label>
+                </div>
+              )}
+
+              {/* Submit Button */}
+              <div className="flex w-full py-4">
+                <button
+                  type="submit"
+                  className="w-full h-12 rounded-xl bg-slate-100 text-zinc-900 font-bold"
+                  disabled={loading}
+                >
+                  {loading ? "Sending..." : "Submit Inquiry"}
+                </button>
+              </div>
+
+              {/* Status Message */}
+              {status && (
+                <div className="text-center text-sm text-white mt-2">
+                  {status}
+                </div>
+              )}
+            </div>
+          </form>
+        </div>
+
+        
+        {/* <div className="md:w-1/2 w-full px-4">
           <form onSubmit={handleSubmit} className="flex flex-col space-y-4 text-black dark:text-white bg-white dark:bg-black p-6 rounded shadow">
             <label className="font-semibold">
               Full Name
@@ -115,7 +239,7 @@ const Contact = () => {
               </div>
             )}
           </form>
-        </div>
+        </div> */}
       </div>
     </div>
   );
