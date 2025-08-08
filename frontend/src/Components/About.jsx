@@ -14,7 +14,7 @@ const About = () => {
             <div className="flex items-center justify-center">
                 <TiltedCard
                   imageSrc={aboutImg}
-                  altText="Kendrick Lamar - GNX Album Cover"
+                  altText=""
                   captionText=""
                   containerHeight="300px"
                   containerWidth="300px"

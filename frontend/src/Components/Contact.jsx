@@ -13,6 +13,7 @@ const Contact = () => {
   };
   // const [selectedPackage, setSelectedPackage] = useState('');
   const { selectedPackage, setSelectedPackage } = usePackage();
+  const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
     const storedPackage = localStorage.getItem('selectedPackage');
@@ -21,34 +22,67 @@ const Contact = () => {
     }
   }, []);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async (event) => {
+    event.preventDefault();
     setLoading(true);
     setStatus("");
+
+    const form = event.target;
+    const data = new FormData(form);
+
     try {
-      const res = await fetch("http://localhost:5000/api/contact", {
+      const response = await fetch("https://formspree.io/f/movlpyvk", {
         method: "POST",
+        body: data,
         headers: {
-          "Content-Type": "application/json",
+          Accept: "application/json",
         },
-        body: JSON.stringify(form),
       });
-      const data = await res.json();
-      if (res.ok) {
+
+      if (response.ok) {
         setStatus("Message sent successfully!");
+        setSubmitted(true);
         setTimeout(() => setStatus(""), 5000);
-        setForm({ name: "", email: "", message: "", budget: "" });
+        setForm({ name: "", email: "", message: "" });
         setSelectedPackage("selection");
       } else {
-        setStatus(data.error || "Failed to send message.");
-        setTimeout(() => setStatus(""), 5000);
-        setSelectedPackage("selection");
+        const errorData = await response.json();
+        setStatus(errorData.error || "Failed to send message.");
       }
-    } catch (err) {
+    } catch (error) {
       setStatus("Failed to send message.");
     }
     setLoading(false);
-  };
+  }
+
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   setLoading(true);
+  //   setStatus("");
+  //   try {
+  //     const res = await fetch("http://localhost:5000/api/contact", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify(form),
+  //     });
+  //     const data = await res.json();
+  //     if (res.ok) {
+  //       setStatus("Message sent successfully!");
+  //       setTimeout(() => setStatus(""), 5000);
+  //       setForm({ name: "", email: "", message: "", budget: "" });
+  //       setSelectedPackage("selection");
+  //     } else {
+  //       setStatus(data.error || "Failed to send message.");
+  //       setTimeout(() => setStatus(""), 5000);
+  //       setSelectedPackage("selection");
+  //     }
+  //   } catch (err) {
+  //     setStatus("Failed to send message.");
+  //   }
+  //   setLoading(false);
+  // };
 
   return (
     <div id="contactme" className="mt-15 py-12">
@@ -79,7 +113,12 @@ const Contact = () => {
         {/* Right Side: Form */}
         {/* <form onSubmit={handleSubmit} className="flex flex-col space-y-4 text-black dark:text-white bg-white dark:bg-black p-6 rounded shadow"> */}
         <div className="w-full flex items-center justify-center px-9 py-8">
-          <form onSubmit={handleSubmit} className="w-full max-w-2xl">
+          <form 
+            onSubmit={handleSubmit}
+            // action="https://formspree.io/f/movlpyvk"
+            // method="POST" 
+            // onSubmit={() => setSubmitted(true)}
+            className="w-full max-w-2xl">
             <div className="flex flex-col w-full">
               <div className="flex flex-center gap-4">
               {/* Your Name */}
@@ -120,6 +159,7 @@ const Contact = () => {
                 <label className="flex flex-col w-full">
                   <p className="text-white text-base font-medium pb-2">Package</p>
                   <select
+                    name="package"
                     className="form-input w-full rounded-xl text-white bg-[#233648] h-14 p-4 placeholder:text-[#92adc9]"
                     value={selectedPackage}
                     onChange={(e) => setSelectedPackage(e.target.value)}
@@ -158,7 +198,8 @@ const Contact = () => {
                       name="budget"
                       value={form.budget}
                       onChange={handleChange}
-                      type="text"
+                      type="number"
+                      min={5000}
                       placeholder="e.g., $5,000 - $10,000"
                       className="form-input w-full rounded-xl text-white bg-[#233648] h-14 p-4 placeholder:text-[#92adc9]"
                     />
@@ -178,11 +219,16 @@ const Contact = () => {
               </div>
 
               {/* Status Message */}
-              {status && (
+              {submitted && (
                 <div className="text-center text-sm text-white mt-2">
                   {status}
                 </div>
               )}
+              {/* {status && (
+                <div className="text-center text-sm text-white mt-2">
+                  {status}
+                </div>
+              )} */}
             </div>
           </form>
         </div>

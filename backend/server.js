@@ -21,8 +21,8 @@ const vonage = new Vonage({
 const EMAILJS_SERVICE_ID = process.env.EMAILJS_SERVICE_ID;
 const EMAILJS_TEMPLATE_ID = process.env.EMAILJS_TEMPLATE_ID;
 const EMAILJS_PUBLIC_KEY = process.env.EMAILJS_PUBLIC_KEY;
-const OWNER_PHONE = process.env.OWNER_PHONE; // e.g. '14155550123'
-const OWNER_EMAIL = process.env.OWNER_EMAIL; // e.g. 'owner@email.com'
+const OWNER_PHONE = process.env.OWNER_PHONE; 
+const OWNER_EMAIL = process.env.OWNER_EMAIL; 
 
 app.post("/api/contact", async (req, res) => {
   const { name, email, message } = req.body;
