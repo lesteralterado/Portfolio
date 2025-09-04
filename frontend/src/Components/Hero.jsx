@@ -17,32 +17,32 @@ const container = (delay) => ({
 
 const Hero = () => {
 return (
-    <div id="home" className="border-b border-neutral-900 pt-29 lg:mb-35 mt-15">
-            <div className="flex flex-wrap mt-20">
+    <div id="home" className="border-b border-neutral-900 pt-16 lg:pt-29 lg:mb-35 lg:mt-15">
+            <div className="flex flex-wrap">
                     <div className="w-full lg:w-1/2">
-                            <div className="flex flex-col pt-29 items-center lg:items-start">
-                                    <motion.h1 
+                            <div className="flex flex-col pt-8 lg:pt-29 items-center lg:items-start">
+                                    <motion.h1
                                             variants={container(0)}
                                             initial="hidden"
                                             animate="visible"
-                                            className="pt-16 pb-5 text-6xl font-thin tracking-tight lg:mt-16 lg:text-8xl"
+                                            className="pt-8 pb-5 text-4xl sm:text-5xl md:text-6xl font-thin tracking-tight lg:mt-16 lg:text-8xl"
                                     >
                                             Lester Royales
                                     </motion.h1>
-                                    <motion.span 
+                                    <motion.span
                                             variants={container(0.5)}
                                             initial="hidden"
                                             animate="visible"
                                             className="bg-gradient-to-r from-slate-400 via-slate-300
-                                            to-slate-500 bg-clip-text text-3xl tracking-tight text-transparent"
+                                            to-slate-500 bg-clip-text text-xl sm:text-2xl md:text-3xl tracking-tight text-transparent"
                                     >
                                             Front End Developer
                                     </motion.span>
-                                    <motion.p 
+                                    <motion.p
                                             variants={container(1)}
                                             initial="hidden"
                                             animate="visible"
-                                            className="my-2 max-w-xl py-6 tracking-tighter"
+                                            className="my-2 max-w-xl py-4 lg:py-6 tracking-tighter text-sm sm:text-base"
                                     >
                                             Hi! I'm a Front-end Developer with experience in building responsive web and mobile apps using React, Next.js, TypeScript, and React Native. I focus on creating{" "}
                                                 <span className={highlight}>user-friendly systems</span>
@@ -72,22 +72,22 @@ return (
                                     </motion.a>
                             </div>
                     </div>
-                    <div className="w-full lg:w-1/2 p-4 lg:p-8">
-                            <div className="flex justify-center items-center mx-auto" 
+                    <div className="w-full lg:w-1/2 p-2 sm:p-4 lg:p-8">
+                            <div className="flex justify-center items-center mx-auto"
                                  style={{
                                         maxWidth: "100%",
                                         width: "100%",
-                                        maxWidth: "520px",
+                                        // maxWidth: "520px",
                                         aspectRatio: "1 / 1",
-                                        borderRadius: "29% 71% 76% 24% / 73% 59% 41% 27%", 
-                                        background: "linear-gradient(135deg, #E3E3E3 0%, #000000 100%)" 
+                                        borderRadius: "29% 71% 76% 24% / 73% 59% 41% 27%",
+                                        background: "linear-gradient(135deg, #E3E3E3 0%, #000000 100%)"
                                         }}>
-                                    <motion.img 
+                                    <motion.img
                                             initial={{x: 100, opacity: 0}}
                                             animate={{x: 0, opacity: 1}}
                                             transition={{duration: 1, delay: 1.2}}
-                                            src={profilePic} 
-                                            alt="Lester Royals" 
+                                            src={profilePic}
+                                            alt="Lester Royals"
                                             className="w-full h-auto object-contain rounded-[29%_71%_76%_24%_/_73%_59%_41%_27%]"
 
                                     />

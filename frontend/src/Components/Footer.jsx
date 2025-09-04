@@ -30,35 +30,13 @@ const links = [
 ];
 
 const Footer = () => (
-  // <footer className="bg-gray-900 text-white py-6 mt-10">
-  //   <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-4">
-  //     <p className="text-center md:text-left mb-4 md:mb-0">
-  //       © {new Date().getFullYear()} Lester Royales. All rights reserved.
-  //     </p>
-  //     <div className="flex gap-4 text-2xl justify-center">
-  //       <a href="https://www.linkedin.com/in/lester-royales-291352267/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">
-  //         <FaLinkedin />
-  //       </a>
-  //       <a href="https://github.com/royalester" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400">
-  //         <FaGithub />
-  //       </a>
-  //       <a href="https://www.instagram.com/lester_royals/" target="_blank" rel="noopener noreferrer" className="hover:text-pink-400">
-  //         <FaInstagram />
-  //       </a>
-  //       <a href="https://www.facebook.com/share/18fpizozYV/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600">
-  //         <FaFacebook />
-  //       </a>
-  //     </div>    
-  //   </div>
-  // </footer>
-
-  <footer className="py-16 md:py-32">
-      <div className="mx-auto max-w-5xl px-6">
+  <footer className="py-8 sm:py-12 md:py-16 lg:py-32">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6">
         <a href="/" aria-label="go home" className="mx-auto block size-fit">
-          <img src={Logo} alt="logo" className="h-20 w-auto" />
+          <img src={Logo} alt="logo" className="h-12 sm:h-16 md:h-20 w-auto" />
         </a>
 
-        <div className="my-8 flex flex-wrap justify-center gap-6 text-sm">
+        <div className="my-6 sm:my-8 flex flex-wrap justify-center gap-4 sm:gap-6 text-xs sm:text-sm">
           {links.map((link, index) => (
             <a
               key={index}
@@ -69,16 +47,16 @@ const Footer = () => (
             </a>
           ))}
         </div>
-        <div className="my-8 flex flex-wrap justify-center gap-6 text-sm">
+        <div className="my-6 sm:my-8 flex flex-wrap justify-center gap-4 sm:gap-6">
           <a
-            href="#"
+            href="https://x.com/RoyalesLesDev"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="X/Twitter"
             className="text-muted-foreground hover:text-primary block"
           >
             <svg
-              className="size-6"
+              className="size-5 sm:size-6"
               xmlns="http://www.w3.org/2000/svg"
               width="1em"
               height="1em"
@@ -98,7 +76,7 @@ const Footer = () => (
             className="text-muted-foreground hover:text-primary block"
           >
             <svg
-              className="size-6"
+              className="size-5 sm:size-6"
               xmlns="http://www.w3.org/2000/svg"
               width="1em"
               height="1em"
@@ -118,7 +96,7 @@ const Footer = () => (
             className="text-muted-foreground hover:text-primary block"
           >
             <svg
-              className="size-6"
+              className="size-5 sm:size-6"
               xmlns="http://www.w3.org/2000/svg"
               width="1em"
               height="1em"
@@ -138,7 +116,7 @@ const Footer = () => (
             className="text-muted-foreground hover:text-primary block"
           >
             <svg
-              className="size-6"
+              className="size-5 sm:size-6"
               xmlns="http://www.w3.org/2000/svg"
               width="1em"
               height="1em"
@@ -163,7 +141,7 @@ const Footer = () => (
             className="text-muted-foreground hover:text-primary block"
           >
             <svg
-              className="size-6"
+              className="size-5 sm:size-6"
               xmlns="http://www.w3.org/2000/svg"
               width="1em"
               height="1em"
@@ -183,7 +161,7 @@ const Footer = () => (
             className="text-muted-foreground hover:text-primary block"
           >
             <svg
-              className="size-6"
+              className="size-5 sm:size-6"
               xmlns="http://www.w3.org/2000/svg"
               width="1em"
               height="1em"
@@ -196,7 +174,7 @@ const Footer = () => (
             </svg>
           </a>
         </div>
-        <span className="text-muted-foreground block text-center text-sm">
+        <span className="text-muted-foreground block text-center text-xs sm:text-sm">
           {" "}
           © {new Date().getFullYear()} Lester Royales. All rights reserved.
         </span>

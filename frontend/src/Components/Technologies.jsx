@@ -6,12 +6,12 @@ import { InfiniteSlider } from "../Components/ui/infinite-slider";
 import { ProgressiveBlur } from "../Components/ui/progressive-blur";
 
 const techIcons = [
-  <FaReact className="text-7xl text-cyan-400" />,
-  <SiKotlin className="text-7xl text-cyan-400" />,
-  <SiCplusplus className="text-7xl text-green-400" />,
-  <SiFirebase className="text-7xl text-red-700" />,
-  <FaNodeJs className="text-7xl text-green-500" />,
-  <SiMysql className="text-7xl text-sky-600" />,
+  <FaReact className="text-5xl sm:text-6xl lg:text-7xl text-cyan-400" />,
+  <SiKotlin className="text-5xl sm:text-6xl lg:text-7xl text-cyan-400" />,
+  <SiCplusplus className="text-5xl sm:text-6xl lg:text-7xl text-green-400" />,
+  <SiFirebase className="text-5xl sm:text-6xl lg:text-7xl text-red-700" />,
+  <FaNodeJs className="text-5xl sm:text-6xl lg:text-7xl text-green-500" />,
+  <SiMysql className="text-5xl sm:text-6xl lg:text-7xl text-sky-600" />,
 ];
 
 const logos = [
@@ -67,10 +67,10 @@ const logos = [
 
 const Technologies = () => {
   return (
-    <div id="technologies" className="border-b border-neutral-800  my-15 py-12 overflow-hidden">
-      <h2 className="my-20 text-center text-4xl text-balance font-semibold lg:text-5xl">Technologies</h2>
+    <div id="technologies" className="border-b border-neutral-800  my-8 lg:my-15 py-8 lg:py-12 overflow-hidden">
+      <h2 className="my-8 lg:my-20 text-center text-3xl sm:text-4xl text-balance font-semibold lg:text-5xl">Technologies</h2>
       <div className="relative w-full overflow-hidden">
-        <div className="flex animate-marquee gap-12 w-max">
+        <div className="flex animate-marquee gap-8 sm:gap-10 lg:gap-12 w-max">
           {techIcons.map((icon, idx) => (
             <div key={idx} className="rounded-2xl border-4 border-neutral-800 p-4">
               {icon}
@@ -85,17 +85,17 @@ const Technologies = () => {
         </div>
       </div>
       {/* <section className="bg-background pb-16 md:pb-32"> */}
-          <div className="group relative m-auto max-w-6xl px-6">
+          <div className="group relative m-auto max-w-6xl px-4 sm:px-6">
             <div className="flex flex-col items-center md:flex-row">
               <div className="md:max-w-44 md:border-r md:pr-6">
-                <p className="text-end text-sm">Powering the best teams</p>
+                <p className="text-end text-xs sm:text-sm">Powering the best teams</p>
               </div>
-              <div className="relative py-6 md:w-[calc(100%-11rem)]">
-                <InfiniteSlider speedOnHover={20} speed={40} gap={112}>
+              <div className="relative py-4 sm:py-6 md:w-[calc(100%-11rem)]">
+                <InfiniteSlider speedOnHover={20} speed={40} gap={56}>
                   {logos.map((logo) => (
                     <div key={logo.name} className="flex">
                       <img
-                        className="max-auto h-5 w-fit dark:invert"
+                        className="mx-auto h-4 sm:h-5 w-fit dark:invert"
                         src={logo.src}
                         alt={`${logo.name} Logo`}
                         title={logo.name}

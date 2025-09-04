@@ -70,7 +70,7 @@ export const PROJECTS = [
 ];
 
 export const CONTACT = {
-  address: "Tubod, Barili, Cebu ",
+  address: "Tubod, Barili, Cebu, Philippines",
   phoneNo: "+639618179619",
-  email: "lesterroyals041203@gmail.com",
+  email: "lesteralteradoroyales@gmail.com",
 };
