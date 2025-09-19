@@ -26,8 +26,15 @@ const Projects = () => {
             src={project.image}
             height="1000"
             width="1000"
-            className="h-40 sm:h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+            className="h-40 sm:h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl cursor-pointer"
             alt="thumbnail"
+            onClick={() => {
+              if (project.link) {
+                if (confirm('Do you want to proceed to the project link?')) {
+                  window.open(project.link, '_blank');
+                }
+              }
+            }}
           />
         </CardItem>
         <div className="flex flex-col sm:flex-row justify-between items-center mt-8 lg:mt-20">

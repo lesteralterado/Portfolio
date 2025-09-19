@@ -1,3 +1,7 @@
+import project01 from "../assets/projects/alenton.png";
+import project02 from "../assets/projects/real-estate.png";
+import project03 from "../assets/projects/cmg.png";
+import project04 from "../assets/projects/royals-web-solutions.png";
 import project1 from "../assets/projects/smart_plant_care.png";
 import project2 from "../assets/projects/water_works_sys.png";
 import project3 from "../assets/projects/chat_app.png";
@@ -40,10 +44,43 @@ export const EXPERIENCES = [
 
 export const PROJECTS = [
   {
+    title: "Alenton - Perfect Touch",
+    image: project01,
+    description:
+      "A graphic design project for Alenton - Perfect Touch, featuring custom branding, logo design, and visual identity creation to establish a strong brand presence.",
+    link: "https://alenton-perfect-touch.netlify.app/",
+    technologies: ["React", "Tailwindcss", "Vite"],
+  },
+  {
+    title: "Real Estate",
+    image: project02,
+    description:
+      "A sample template for a real estate website system, including property listings, search functionality, user dashboards, and responsive design for efficient property management.",
+    link: "https://real-estate-phil.netlify.app/",
+    technologies: ["React", "Tailwindcss", "Vite"],
+  },
+  {
+    title: "CMG",
+    image: project03,
+    description:
+      "CMG is a Computer Skills Training Center in the Philippines that aims to help Filipino students gain knowledge in computer skills and obtain certificates to prepare them for job opportunities.",
+    link: "https://cmg-training-center.netlify.app/pages/index.html",
+    technologies: ["React", "Tailwindcss", "Vite"],
+  },
+  {
+    title: "Royals Web Solutions",
+    image: project04,
+    description:
+      "A marketplace where business owners seek websites to address their business problems, publish their businesses online, offering solutions custom websites tailored to specific needs.",
+    link: "https://royals-web-solutions.netlify.app/",
+    technologies: ["NextJS", "Tailwindcss"],
+  },
+  {
     title: "Smart Plant Care",
     image: project1,
     description:
       "The Smart Plant Care System is an IoT-based mobile app development project designed to automate and optimize plant maintenance.",
+    link: "",
     technologies: ["Kotlin", "C", "C++", "Firebase"],
   },
   {
@@ -51,6 +88,7 @@ export const PROJECTS = [
     image: project2,
     description:
       "An application for managing tasks and projects, with features such as task creation, assignment, and progress tracking.",
+    link: "",
     technologies: ["Java", "MySQL"],
   },
   {
@@ -58,6 +96,7 @@ export const PROJECTS = [
     image: project3,
     description:
       "A personal portfolio website showcasing projects, skills, and contact information.",
+    link: "",
     technologies: ["Pyhton", "DJango", "HTML", "CSS"],
   },
   {
@@ -65,6 +104,7 @@ export const PROJECTS = [
     image: project4,
     description:
       "A personal portfolio website showcasing projects, skills, and contact information.",
+    link: "",
     technologies: ["HTML", "CSS", "React", "Bootstrap"],
   },
 ];
