@@ -1,4 +1,5 @@
 import logo from "../assets/logoo.png";
+import resume from "../assets/resume.pdf";
 import { motion } from "framer-motion";
 import { HoverBorderGradient } from "../Components/ui/hover-border-gradient";
 import { Menu, X } from "lucide-react";
@@ -38,7 +39,7 @@ const Navbar = () => {
           Download Resume
         </a> */}
         <motion.a
-          href="/resume.pdf"
+          href={resume}
           download
           whileTap={{ scale: 0.96 }}
           whileHover={{ scale: 1.04, boxShadow: "0 4px 20px rgba(200, 200, 200, 0.3)" }}
@@ -98,7 +99,7 @@ const Navbar = () => {
             </a>
           ))}
 
-          <a href="/resume.pdf" download className="text-white font-semibold">
+          <a href={resume} download className="text-white font-semibold">
             <HoverBorderGradient
               containerClassName="rounded bg-black"
               as="button"
