@@ -18,7 +18,7 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   // const { setTheme } = useTheme()
   return (
-    <nav className="fixed top-0 z-10 mb-23 w-full flex items-center justify-between shadow bg-white/10 backdrop-blur-lg border-b border-white/20">
+  <nav className="fixed top-0 z-50 mb-23 w-full flex items-center justify-between shadow bg-white/10 backdrop-blur-lg border-b border-white/20">
       <div className="flex flex-shrink-0 items-center">
         <img className="mx-2" src={logo} alt="logo" style={{ width: '80px', height: 'auto' }} />
       </div>

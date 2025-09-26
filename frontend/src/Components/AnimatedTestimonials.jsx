@@ -1,6 +1,7 @@
-import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
+import { AnimatedTestimonials } from "./ui/animated-testimonials";
+import alentonImg from "../assets/projects/alenton.png";
 
-export function AnimatedTestimonialsDemo() {
+export default function AnimatedTestimonialsDemo() {
   const testimonials = [
     {
       quote:
@@ -36,6 +37,13 @@ export function AnimatedTestimonialsDemo() {
       name: "Lisa Thompson",
       designation: "VP of Technology at FutureNet",
       src: "https://images.unsplash.com/photo-1624561172888-ac93c696e10c?q=80&w=2592&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+    {
+      quote:
+        "Working with you has been a great experience! Your attention to detail and commitment to quality are impressive. I appreciate how quickly you implement revisions and debug issues. Your patience and willingness to understand requirements have made our collaboration smooth and productive. Keep up the excellent work!",
+      name: "Rhia Jean",
+      designation: "Alenton Perfect Touch",
+      src: alentonImg,
     },
   ];
   return <AnimatedTestimonials testimonials={testimonials} />;

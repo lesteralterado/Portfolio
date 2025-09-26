@@ -1,8 +1,9 @@
 import Contact from './Components/Contact';
 import About from './Components/About';
 import Hero from './Components/Hero';
-import Features from './Components/Features';
+// import Features from './Components/Features';
 import Navbar from './Components/Navbar';
+import AnimatedTestimonialsDemo from './Components/AnimatedTestimonials';
 import Projects from './Components/Projects';
 import Technologies from './Components/Technologies';
 import Footer from './Components/Footer';
@@ -19,8 +20,9 @@ const App = () => {
           <div className='container mx-auto px-8'>
             <Hero />
             <About />
-            <Features />
+            {/* <Features /> */}
             <Technologies />
+            <AnimatedTestimonialsDemo />
             <Projects />
             <Contact />
           </div>
