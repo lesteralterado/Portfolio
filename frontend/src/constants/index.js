@@ -8,6 +8,9 @@ import project3 from "../assets/projects/chat_app.png";
 import project4 from "../assets/logoo.png";
 import project5 from "../assets/projects/edusolves.png";
 import project6 from "../assets/projects/anopog.png";
+import project6_1 from "../assets/projects/customer.jpg";
+import project6_2 from "../assets/projects/meterReader.jpg";
+import project6_3 from "../assets/projects/kiosk.jpg";
 
 export const HERO_CONTENT = `Hi! I'm a Front-end Developer with experience in building responsive web and mobile apps using React, Next.js, TypeScript, and React Native. I focus on creating user-friendly systems that improve workflows, attract more customers, and solve real-world problems—especially for rental businesses.`;
 
@@ -51,15 +54,15 @@ export const PROJECTS = [
     description:
       "An educational platform designed to provide solutions and resources for learners, featuring interactive tools and comprehensive learning materials.",
     link: "https://edusolves.netlify.app",
-    technologies: ["React", "ExpressJS", "MongoDB"],
+    technologies: ["React", "Tailwindcss", "Vite"],
   },
   {
-    title: "Anopog Water Billing",
-    image: project6,
+    title: "Anopog Water Billing System",
+    images: [project6, project6_1, project6_2, project6_3], // Placeholder: website, customer, meter-reader, kiosk
     description:
-      "A frontend application for water billing management in Anopog, enabling users to view bills, make payments, and track usage efficiently.",
+      "A comprehensive water billing system including a web frontend for billing management, and mobile apps for customers, meter readers, and kiosk operations.",
     link: "https://anopog-waterbillingsystem-frontend.vercel.app",
-    technologies: ["NextJS", "ExpressJS", "PostgreSQL"],
+    technologies: ["React", "Vite", "Tailwindcss", "Flutter"],
   },
   {
     title: "Alenton - Perfect Touch",

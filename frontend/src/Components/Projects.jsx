@@ -5,6 +5,8 @@ import { CardBody, CardContainer, CardItem } from "../Components/ui/3d-card";
 const Projects = () => {
   const [showConfirm, setShowConfirm] = useState(false);
   const [selectedLink, setSelectedLink] = useState("");
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   return (
     <div id="projects" className=" border-b border-neutral-900 mt-8 lg:mt-15 py-8 lg:py-12">
       <h1 className="mt-8 lg:mt-20 text-center text-balance text-3xl sm:text-4xl font-semibold lg:text-5xl">Projects</h1>
@@ -26,13 +28,16 @@ const Projects = () => {
         </CardItem>
         <CardItem translateZ="100" className="w-full mt-4">
           <img
-            src={project.image}
+            src={project.images ? project.images[0] : project.image}
             height="1000"
             width="1000"
             className="h-40 sm:h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl cursor-pointer"
             alt="thumbnail"
             onClick={() => {
-              if (project.link) {
+              if (project.images) {
+                setSelectedProject(project);
+                setCurrentImageIndex(0);
+              } else if (project.link) {
                 setSelectedLink(project.link);
                 setShowConfirm(true);
               }
@@ -82,6 +87,64 @@ const Projects = () => {
                 No
               </button>
             </div>
+          </div>
+        </div>
+      )}
+      {selectedProject && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white dark:bg-zinc-900 p-6 rounded-xl shadow-lg max-w-4xl w-full mx-4">
+            <div className="flex justify-between items-center mb-4">
+              <h2 className="text-xl font-bold text-neutral-900 dark:text-white">{selectedProject.title}</h2>
+              <button
+                onClick={() => setSelectedProject(null)}
+                className="text-neutral-900 dark:text-white text-2xl"
+              >
+                ×
+              </button>
+            </div>
+            <div className="relative">
+              <img
+                src={selectedProject.images[currentImageIndex]}
+                alt={`Screenshot ${currentImageIndex + 1}`}
+                className="w-full h-64 sm:h-96 object-cover rounded-xl"
+              />
+              {selectedProject.images.length > 1 && (
+                <>
+                  <button
+                    onClick={() => setCurrentImageIndex((prev) => (prev - 1 + selectedProject.images.length) % selectedProject.images.length)}
+                    className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full"
+                  >
+                    ‹
+                  </button>
+                  <button
+                    onClick={() => setCurrentImageIndex((prev) => (prev + 1) % selectedProject.images.length)}
+                    className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full"
+                  >
+                    ›
+                  </button>
+                </>
+              )}
+            </div>
+            <div className="flex justify-center mt-4">
+              {selectedProject.images.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentImageIndex(index)}
+                  className={`w-3 h-3 rounded-full mx-1 ${index === currentImageIndex ? 'bg-black dark:bg-white' : 'bg-gray-300'}`}
+                />
+              ))}
+            </div>
+            <p className="text-center text-neutral-700 dark:text-neutral-300 mt-4">{selectedProject.description}</p>
+            {selectedProject.link && (
+              <div className="flex justify-center mt-4">
+                <button
+                  onClick={() => window.open(selectedProject.link, '_blank')}
+                  className="px-4 py-2 bg-black text-white dark:bg-white dark:text-black rounded-xl"
+                >
+                  Visit Website
+                </button>
+              </div>
+            )}
           </div>
         </div>
       )}
