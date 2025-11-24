@@ -6,6 +6,8 @@ import project1 from "../assets/projects/smart_plant_care.png";
 import project2 from "../assets/projects/water_works_sys.png";
 import project3 from "../assets/projects/chat_app.png";
 import project4 from "../assets/logoo.png";
+import project5 from "../assets/projects/edusolves.png";
+import project6 from "../assets/projects/anopog.png";
 
 export const HERO_CONTENT = `Hi! I'm a Front-end Developer with experience in building responsive web and mobile apps using React, Next.js, TypeScript, and React Native. I focus on creating user-friendly systems that improve workflows, attract more customers, and solve real-world problems—especially for rental businesses.`;
 
@@ -43,6 +45,22 @@ export const EXPERIENCES = [
 ];
 
 export const PROJECTS = [
+  {
+    title: "EduSolves",
+    image: project5,
+    description:
+      "An educational platform designed to provide solutions and resources for learners, featuring interactive tools and comprehensive learning materials.",
+    link: "https://edusolves.netlify.app",
+    technologies: ["React", "ExpressJS", "MongoDB"],
+  },
+  {
+    title: "Anopog Water Billing",
+    image: project6,
+    description:
+      "A frontend application for water billing management in Anopog, enabling users to view bills, make payments, and track usage efficiently.",
+    link: "https://anopog-waterbillingsystem-frontend.vercel.app",
+    technologies: ["NextJS", "ExpressJS", "PostgreSQL"],
+  },
   {
     title: "Alenton - Perfect Touch",
     image: project01,
