@@ -36,7 +36,7 @@ return (
                                             className="bg-gradient-to-r from-slate-400 via-slate-300
                                             to-slate-500 bg-clip-text text-xl sm:text-2xl md:text-3xl tracking-tight text-transparent"
                                     >
-                                            Front End Developer
+                                            Junior Full Stack Developer
                                     </motion.span>
                                     <motion.p
                                             variants={container(1)}
@@ -44,13 +44,7 @@ return (
                                             animate="visible"
                                             className="my-2 max-w-xl py-4 lg:py-6 tracking-tighter text-sm sm:text-base"
                                     >
-                                            Hi! I'm a Front-end Developer with experience in building responsive web and mobile apps using React, Next.js, TypeScript, and React Native. I focus on creating{" "}
-                                                <span className={highlight}>user-friendly systems</span>
-                                                {" "}that improve workflows,{" "}
-                                                <span className={highlight}>attract</span>
-                                                {" "}more customers, and{" "}
-                                                <span className={highlight}>solve real-world problems</span>
-                                                {" "}especially for rental businesses.
+                                            Hi! I'm a Junior Full Stack Developer who solves business problems through web systems. I build solutions that help businesses stand out online and run smoother - booking systems, management tools, customer platforms that actually get used. Not just pretty websites. Real problems, practical solutions - that's what I'm all about.
                                     </motion.p>
                                     <motion.a
                                             href="#contactme"

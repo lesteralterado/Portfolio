@@ -54,7 +54,7 @@ export const PROJECTS = [
     description:
       "An educational platform designed to provide solutions and resources for learners, featuring interactive tools and comprehensive learning materials.",
     link: "https://edusolves.netlify.app",
-    technologies: ["React", "Tailwindcss", "Vite"],
+    technologies: ["React", "MongoDB", "ExpressJS"],
   },
   {
     title: "Anopog Water Billing System",
@@ -62,7 +62,7 @@ export const PROJECTS = [
     description:
       "A comprehensive water billing system including a web frontend for billing management, and mobile apps for customers, meter readers, and kiosk operations.",
     link: "https://anopog-waterbillingsystem-frontend.vercel.app",
-    technologies: ["React", "Vite", "Tailwindcss", "Flutter"],
+    technologies: ["NextJS", "Express", "Flutter"],
   },
   {
     title: "Alenton - Perfect Touch",
@@ -78,7 +78,7 @@ export const PROJECTS = [
     description:
       "A sample template for a real estate website system, including property listings, search functionality, user dashboards, and responsive design for efficient property management.",
     link: "https://real-estate-phil.netlify.app/",
-    technologies: ["React", "Tailwindcss", "Vite"],
+    technologies: ["NextJS", "PostgreSQL", "Express"],
   },
   {
     title: "CMG",
