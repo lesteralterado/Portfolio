@@ -44,7 +44,12 @@ return (
                                             animate="visible"
                                             className="my-2 max-w-xl py-4 lg:py-6 tracking-tighter text-sm sm:text-base"
                                     >
-                                            Hi! I'm a Junior Full Stack Developer who solves business problems through web systems. I build solutions that help businesses stand out online and run smoother - booking systems, management tools, customer platforms that actually get used. Not just pretty websites. Real problems, practical solutions - that's what I'm all about.
+                                            Hi! I'm a Junior Full Stack Developer who solves{" "} 
+                                            <span className={highlight}>business problems</span>
+                                            {" "}through web systems. I build solutions that help businesses{" "}
+                                            <span className={highlight}>stand out online</span>
+                                            {" "}and run smoother - booking systems, management tools, customer platforms that actually get used. Not just pretty websites.{""}
+                                            <span className={highlight}>Real problems, practical solutions</span> - that's what I'm all about.
                                     </motion.p>
                                     <motion.a
                                             href="#contactme"
