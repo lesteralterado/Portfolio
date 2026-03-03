@@ -52,6 +52,9 @@ return (
                                             <span className={highlight}>Real problems, practical solutions</span> - that's what I'm all about.
                                     </motion.p>
                                     <motion.a
+                                                variants={container(1.5)}
+                                                initial="hidden"
+                                                animate="visible" 
                                             href="#contactme"
                                             whileTap={{ scale: 0.96 }}
                                             whileHover={{ scale: 1.04, boxShadow: "0 4px 20px rgba(200, 200, 200, 0.1)" }}

@@ -48,6 +48,15 @@ export const EXPERIENCES = [
 ];
 
 export const PROJECTS = [
+  
+  {
+    title: "Car Rental System",
+    image: "https://res.cloudinary.com/dkh8nwocg/image/upload/v1772543876/Screenshot_231_qgp3zn.png",
+    description:
+      "A modern, fully automated Car Rental Web App designed to simplify bookings and fleet management. This SaaS template allows customers to browse available vehicles, select rental dates, and book online in real-time.",
+    link: "https://car-rental-standard.netlify.app/",
+    technologies: ["NextJS", "MongoDB", "ExpressJS"],
+  },
   {
     title: "EduSolves",
     image: project5,
